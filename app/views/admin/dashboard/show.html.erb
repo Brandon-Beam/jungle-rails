@@ -1,2 +1,8 @@
-<h1>Admin::Dashboard#show</h1>
-<p>Find me in app/views/admin/dashboard/show.html.erb</p>
+<h3>You have <%=@categories.length%> categories of items</h3>
+<% @test.each do |i|%>
+  <table>
+<tr><%=i.name%>
+  <td><%=i.quantity%></td>
+</tr>
+</table>
+<%end %>
