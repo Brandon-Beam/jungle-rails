@@ -1,11 +1,41 @@
 <section class="orders-show">
 
   <header class="page-header">
-    <h1>Order #<%= @order.id %></h1>
+    <h1>Order <%= @order.id %></h1>
   </header>
 
   <div class="order-summary jumbotron">
     <h4>Thank you for your order!</h4>
+    <table>
+    <thead>
+        <tr>
+          <th>Order id </th>
+          <th>Quantity </th>
+          <th>Product id </th>
+          <th>Item price</th>
+          <th>Date ordered</th>
+         
+        </tr>
+      </thead>
+    <% puts @order.inspect%>
+    
+  <tbody>
+      <% @order.line_items.each do |item| %>
+      <tr>
+      <td><%= item[:order_id] %></td>
+      <td><%= item[:quantity] %></td>
+      <td><%= item[:product_id] %></td>
+      <td><%= humanized_money_with_symbol item[:item_price_cents]/100.00 %></td>
+      <td><%= item[:created_at].strftime("%d/%m/%Y") %></td>
+      </tr>
+      </tbody>
+      </table>
+      <p> Your total today is <%= humanized_money_with_symbol item[:total_price_cents]/100.00 %></p>
+      <% end %>
+      <p><%= @order.email %></p>
+      
+        
+
   </div>
 
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
