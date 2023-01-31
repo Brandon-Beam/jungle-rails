@@ -39,7 +39,6 @@ RSpec.describe Product, type: :model do
         price: 64.99
       })
       @product.save
-      puts @product.errors.full_messages
      expect(@product.errors.full_messages).to include("Category can't be blank")
     end
     it "validates price" do
@@ -48,7 +47,6 @@ RSpec.describe Product, type: :model do
         quantity: 7
       })
       @product.save
-      puts @product.errors.full_messages
      expect(@product.errors.full_messages).to include("Price can't be blank")
     end
   end
