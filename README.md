@@ -1,6 +1,7 @@
 # Jungle
 
 A mini e-commerce application built with Rails 6.1 for purposes of teaching Rails by example.
+Built with pride by Brandon Beam
 
 ## Setup
 
