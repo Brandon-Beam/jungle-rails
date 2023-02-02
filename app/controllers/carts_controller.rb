@@ -2,7 +2,7 @@ class CartsController < ApplicationController
  # before_action :authorize
   def show
   end
-
+# handles all the adding to cart functionality
   def add_item
     product_id = params[:product_id].to_s
     modify_cart_delta(product_id, +1)

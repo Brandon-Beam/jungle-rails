@@ -9,7 +9,7 @@ class Admin::ProductsController < ApplicationController
   def new
     @product = Product.new
   end
-
+#sends to db if validations pass
   def create
     @product = Product.new(product_params)
 
@@ -27,7 +27,7 @@ class Admin::ProductsController < ApplicationController
   end
 
   private
-
+#takes from new in views/admin
   def product_params
     params.require(:product).permit(
       :name,

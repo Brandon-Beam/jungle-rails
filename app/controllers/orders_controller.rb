@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-
+#hanles checkout functionality
   def show
     @order = Order.find(params[:id])
   end
